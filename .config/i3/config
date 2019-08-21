@@ -134,6 +134,18 @@ set $ws8 "    8: "
 set $ws9 "    9: "
 set $ws10 "    10: "
 
+# v4 - default
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
 # default workspace for apps
 #for_window [class="Chromium"] move to workspace $ws1
 #for_window [class="Spotify"] move to workspace $ws2
@@ -230,9 +242,10 @@ mode "resize" {
 
 # Gaps settings
 for_window [class="^.*"] border pixel 0
-#smart_gaps on
-gaps inner 15
-gaps outer 0
+smart_gaps on
+smart_borders on
+gaps inner 25
+gaps outer 5
 
 # Argonaut colors
 # Black / Bright Black
@@ -360,8 +373,11 @@ bindsym $mod+r mode "resize"
 bindsym $mod+x exec i3lock
 
 #startup
+#exec_always --no-startup-id feh --bg-scale ~/Resimler/shoot-before-nature-think-myspace-wallpaper-92528.jpg
+#exec_always --no-startup-id feh --bg-scale ~/Resimler/zV02.jpg
+exec_always --no-startup-id feh --bg-scale ~/Resimler/wallhaven-zxrw8o.png
 #exec_always --no-startup-id feh --bg-scale ~/.config/i3/6FSOcHl.png
-exec_always --no-startup-id feh --bg-scale ~/.config/i3/wallpaper.png
+#exec_always --no-startup-id feh --bg-scale ~/.config/i3/wallpaper.png
 exec_always nm-applet
 exec_always --no-startup-id  ~/.config/polybar/launch.sh
 exec compton --config ~/.config/compton/compton.conf -b
