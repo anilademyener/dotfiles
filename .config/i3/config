@@ -242,9 +242,9 @@ mode "resize" {
 
 # Gaps settings
 for_window [class="^.*"] border pixel 0
-smart_gaps on
+#smart_gaps on
 smart_borders on
-gaps inner 25
+gaps inner 5
 gaps outer 5
 
 # Argonaut colors

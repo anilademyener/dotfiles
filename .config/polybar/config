@@ -81,11 +81,11 @@ modules-right = date
 [bar/i3-bar]
 inherit = bar/master
 
-modules-left = jgmenu i3 
+modules-left = i3 
 ;modules-center = uptime coreavg load core0temp memory battery wireless-network
 ;modules-center = uptime coreavg load memory battery wireless-network
 modules-center = clock
-modules-right = coreavg memory jgmenu
+modules-right = coreavg memory
 
 ; Position of the system tray window
 ; If empty or undefined, tray support will be disabled
