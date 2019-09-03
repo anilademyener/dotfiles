@@ -1,5 +1,14 @@
 " call PlugInstall to install new plugins
 
+" Plugins
+call plug#begin()
+
+Plug 'terryma/vim-multiple-cursors'
+Plug 'itchyny/lightline.vim'
+
+call plug#end()
+"run :PlugInstall to install plugin
+
 " basics
 filetype plugin indent on
 syntax on set number
