@@ -310,9 +310,10 @@ globalkeys = gears.table.join(
               end,
               {description = "restore minimized", group = "client"}),
 
-    -- Prompt
-    awful.key({ modkey },            "d",     function () awful.screen.focused().mypromptbox:run() end, -- custom
-              {description = "run prompt", group = "launcher"}),
+    awful.key({ modkey }, "d", function() menubar.show() end, -- custom
+              {description = "show the menubar", group = "launcher"}),
+    --[[awful.key({ modkey },            "d",     function () awful.screen.focused().mypromptbox:run() end, -- custom
+              {description = "run prompt", group = "launcher"}),--]]
 
     awful.key({ modkey }, "x",
               function ()
@@ -376,10 +377,15 @@ clientkeys = gears.table.join(
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it work on any keyboard layout.
 -- This should map on the top row of your keyboard, usually 1 to 9.
+
+-- Numpad: [0-9] = [#90, #87-#89, #83-#85, #79-#81] -- custom
+local np_map = { 87, 88, 89, 83, 84, 85, 79, 80, 81 } -- custom
+
 for i = 1, 9 do
     globalkeys = gears.table.join(globalkeys,
         -- View tag only.
-        awful.key({ modkey }, "#" .. i + 9,
+        -- awful.key({ modkey }, "#" .. i + 9, -- custom
+        awful.key({ modkey }, "#" .. np_map[i], -- custom
                   function ()
                         local screen = awful.screen.focused()
                         local tag = screen.tags[i]
@@ -389,7 +395,8 @@ for i = 1, 9 do
                   end,
                   {description = "view tag #"..i, group = "tag"}),
         -- Toggle tag display.
-        awful.key({ modkey, "Control" }, "#" .. i + 9,
+        -- awful.key({ modkey, "Control" }, "#" .. i + 9, -- custom
+        awful.key({ modkey, "Control" }, "#" .. np_map[i], -- custom
                   function ()
                       local screen = awful.screen.focused()
                       local tag = screen.tags[i]
@@ -399,7 +406,8 @@ for i = 1, 9 do
                   end,
                   {description = "toggle tag #" .. i, group = "tag"}),
         -- Move client to tag.
-        awful.key({ modkey, "Control" }, "#" .. i + 9, -- custom
+        -- awful.key({ modkey, "Control" }, "#" .. i + 9, -- custom
+        awful.key({ modkey, "Control" }, "#" .. np_map[i], -- custom
                   function ()
                       if client.focus then
                           local tag = client.focus.screen.tags[i]
@@ -410,7 +418,8 @@ for i = 1, 9 do
                   end,
                   {description = "move focused client to tag #"..i, group = "tag"}),
         -- Toggle tag on focused client.
-        awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
+        -- awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9, -- custom
+        awful.key({ modkey, "Control", "Shift" }, "#" .. np_map[i], -- custom
                   function ()
                       if client.focus then
                           local tag = client.focus.screen.tags[i]
