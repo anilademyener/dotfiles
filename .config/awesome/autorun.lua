@@ -13,7 +13,7 @@ function filecheck(file)
 end
 
 function remove()
-    print("# AUTORUN REMOVING FROM YOUR SYSTEM")
+    print("# AUTORUN IS REMOVING FROM YOUR SYSTEM")
     os.execute("sudo rm -rf /usr/local/bin/autorun.lua")
 end
 
@@ -22,8 +22,8 @@ function main()
         os.execute("feh --bg-scale ~/.config/awesome/wallpaper2.png")
         os.execute("compton --config ~/.config/compton/compton.conf -b")
     else
-        print("# AUTORUN INSTALLING TO YOUR SYSTEM")
-        os.execute("sudo cp -r autorun.lua /usr/local/bin/")
+        print("# AUTORUN IS COPYING TO YOUR SYSTEM")
+        os.execute("sudo cp -r autorun.lua /usr/local/bin/autorun.lua")
     end
 end
 
