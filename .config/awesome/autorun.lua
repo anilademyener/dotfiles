@@ -12,6 +12,13 @@ function filecheck(file)
     return ok, err
 end
 
+function install()
+    if filecheck("/usr/local/bin/autorun.lua") == true then
+        os.execute("sudo rm -rf /usr/local/bin/autorun.lua")
+    end
+    os.execute("sudo cp -r autorun.lua /usr/local/bin/autorun.lua")
+end
+
 function remove()
     print("# AUTORUN IS REMOVING FROM YOUR SYSTEM")
     os.execute("sudo rm -rf /usr/local/bin/autorun.lua")
@@ -26,7 +33,9 @@ function main()
     end
 end
 
-if arg[1] == "--remove" then
+if arg[1] == "--install" then
+    install()
+elseif arg[1] == "--remove" then
     remove()
 else
     main()

@@ -96,18 +96,21 @@ local browser      = "chromium"
 local guieditor    = "vi"
 local scrlocker    = "slock"
 
+-- tags
+awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[3])
+
 awful.util.terminal = terminal
-awful.util.tagnames = { "1", "2", "3", "4", "5" }
+awful.util.tagnames = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }
 awful.layout.layouts = {
     --awful.layout.suit.floating,
     awful.layout.suit.tile,
     awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
-    --awful.layout.suit.fair,
-    --awful.layout.suit.fair.horizontal,
-    --awful.layout.suit.spiral,
-    --awful.layout.suit.spiral.dwindle,
+    -- awful.layout.suit.fair,
+    -- awful.layout.suit.fair.horizontal,
+    -- awful.layout.suit.spiral,
+    -- awful.layout.suit.spiral.dwindle,
     --awful.layout.suit.max,
     --awful.layout.suit.max.fullscreen,
     --awful.layout.suit.magnifier,
@@ -117,10 +120,10 @@ awful.layout.layouts = {
     --awful.layout.suit.corner.se,
     --lain.layout.cascade,
     --lain.layout.cascade.tile,
-    --lain.layout.centerwork,
+    -- lain.layout.centerwork,
     --lain.layout.centerwork.horizontal,
-    --lain.layout.termfair,
-    --lain.layout.termfair.center,
+    -- lain.layout.termfair,
+    -- lain.layout.termfair.center,
 }
 
 awful.util.taglist_buttons = my_table.join(
@@ -419,6 +422,16 @@ globalkeys = my_table.join(
               end,
               {description = "restore minimized", group = "client"}),
 
+    -- custom keys for resize clients
+    --awful.key({ modkey, "Control"    }, "Right",     function () awful.tag.incmwfact( 0.10)    end),
+    --awful.key({ modkey, "Control"    }, "Left",     function () awful.tag.incmwfact(-0.10)    end),
+    --awful.key({ modkey, "Control"    }, "Down",     function () awful.client.incwfact( 0.10)    end),
+    --awful.key({ modkey, "Control"    }, "Up",     function () awful.client.incwfact(-0.10)    end),
+    awful.key({ modkey, "Control"    }, "Left",     function () awful.tag.incmwfact( 0.10)    end),
+    awful.key({ modkey, "Control"    }, "Right",     function () awful.tag.incmwfact(-0.10)    end),
+    awful.key({ modkey, "Control"    }, "Up",     function () awful.client.incwfact( 0.10)    end),
+    awful.key({ modkey, "Control"    }, "Down",     function () awful.client.incwfact(-0.10)    end),
+
     -- Dropdown application
     awful.key({ modkey, }, "z", function () awful.screen.focused().quake:toggle() end,
               {description = "dropdown application", group = "launcher"}),
@@ -545,7 +558,7 @@ globalkeys = my_table.join(
     -- Prompt
     awful.key({ modkey }, "r", function () awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),
-    awful.key({ modkey }, "x",
+    --[[awful.key({ modkey }, "x", -- custom
               function ()
                   awful.prompt.run {
                     prompt       = "Run Lua code: ",
@@ -554,7 +567,8 @@ globalkeys = my_table.join(
                     history_path = awful.util.get_cache_dir() .. "/history_eval"
                   }
               end,
-              {description = "lua execute prompt", group = "awesome"})
+              {description = "lua execute prompt", group = "awesome"}) --]]
+    awful.key({ modkey, }, "x", function () awful.util.spawn("betterlockscreen --lock --blur") end) -- custom
     --]]
 )
 

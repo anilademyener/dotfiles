@@ -51,18 +51,32 @@ theme.bat_no                                    = theme.dir .. "/icons/bat_no.pn
 theme.play                                      = theme.dir .. "/icons/play.png"
 theme.pause                                     = theme.dir .. "/icons/pause.png"
 theme.stop                                      = theme.dir .. "/icons/stop.png"
-theme.layout_tile                               = theme.dir .. "/icons/tile.png"
-theme.layout_tileleft                           = theme.dir .. "/icons/tileleft.png"
-theme.layout_tilebottom                         = theme.dir .. "/icons/tilebottom.png"
-theme.layout_tiletop                            = theme.dir .. "/icons/tiletop.png"
-theme.layout_fairv                              = theme.dir .. "/icons/fairv.png"
-theme.layout_fairh                              = theme.dir .. "/icons/fairh.png"
-theme.layout_spiral                             = theme.dir .. "/icons/spiral.png"
-theme.layout_dwindle                            = theme.dir .. "/icons/dwindle.png"
-theme.layout_max                                = theme.dir .. "/icons/max.png"
-theme.layout_fullscreen                         = theme.dir .. "/icons/fullscreen.png"
-theme.layout_magnifier                          = theme.dir .. "/icons/magnifier.png"
-theme.layout_floating                           = theme.dir .. "/icons/floating.png"
+--theme.layout_tile                               = theme.dir .. "/icons/tile.png"
+--theme.layout_tileleft                           = theme.dir .. "/icons/tileleft.png"
+--theme.layout_tilebottom                         = theme.dir .. "/icons/tilebottom.png"
+--theme.layout_tiletop                            = theme.dir .. "/icons/tiletop.png"
+--theme.layout_fairv                              = theme.dir .. "/icons/fairv.png"
+--theme.layout_fairh                              = theme.dir .. "/icons/fairh.png"
+--theme.layout_spiral                             = theme.dir .. "/icons/spiral.png"
+--theme.layout_dwindle                            = theme.dir .. "/icons/dwindle.png"
+--theme.layout_max                                = theme.dir .. "/icons/max.png"
+--theme.layout_fullscreen                         = theme.dir .. "/icons/fullscreen.png"
+--theme.layout_magnifier                          = theme.dir .. "/icons/magnifier.png"
+--theme.layout_floating                           = theme.dir .. "/icons/floating.png"
+
+theme.layout_tile                               = theme.dir .. "/icons/awesome.png"
+theme.layout_tileleft                           = theme.dir .. "/icons/awesome.png"
+theme.layout_tilebottom                         = theme.dir .. "/icons/awesome.png"
+theme.layout_tiletop                            = theme.dir .. "/icons/awesome.png"
+theme.layout_fairv                              = theme.dir .. "/icons/awesome.png"
+theme.layout_fairh                              = theme.dir .. "/icons/awesome.png"
+theme.layout_spiral                             = theme.dir .. "/icons/awesome.png"
+theme.layout_dwindle                            = theme.dir .. "/icons/awesome.png"
+theme.layout_max                                = theme.dir .. "/icons/awesome.png"
+theme.layout_fullscreen                         = theme.dir .. "/icons/awesome.png"
+theme.layout_magnifier                          = theme.dir .. "/icons/awesome.png"
+theme.layout_floating                           = theme.dir .. "/icons/awesome.png"
+
 theme.useless_gap                               = 0
 theme.titlebar_close_button_focus               = theme.dir .. "/icons/titlebar/close_focus.png"
 theme.titlebar_close_button_normal              = theme.dir .. "/icons/titlebar/close_normal.png"
@@ -84,9 +98,13 @@ theme.titlebar_maximized_button_focus_inactive  = theme.dir .. "/icons/titlebar/
 theme.titlebar_maximized_button_normal_inactive = theme.dir .. "/icons/titlebar/maximized_normal_inactive.png"
 
 -- lain related
-theme.layout_centerfair                         = theme.dir .. "/icons/centerfair.png"
-theme.layout_termfair                           = theme.dir .. "/icons/termfair.png"
-theme.layout_centerwork                         = theme.dir .. "/icons/centerwork.png"
+--theme.layout_centerfair                         = theme.dir .. "/icons/centerfair.png"
+--theme.layout_termfair                           = theme.dir .. "/icons/termfair.png"
+--theme.layout_centerwork                         = theme.dir .. "/icons/centerwork.png"
+
+theme.layout_centerfair                         = theme.dir .. "/icons/awesome.png"
+theme.layout_termfair                           = theme.dir .. "/icons/awesome.png"
+theme.layout_centerwork                         = theme.dir .. "/icons/awesome.png"
 
 local markup = lain.util.markup
 local blue   = theme.fg_focus
@@ -332,7 +350,8 @@ function theme.at_screen_connect(s)
     s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, awful.util.tasklist_buttons)
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(18), bg = theme.bg_normal, fg = theme.fg_normal })
+    --s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(18), bg = theme.bg_normal, fg = theme.fg_normal }) -- custom
+    s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(14), bg = theme.bg_normal, fg = theme.fg_normal }) -- custom
 
     -- Add widgets to the wibox
     s.mywibox:setup {
