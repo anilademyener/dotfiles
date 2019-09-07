@@ -796,7 +796,7 @@ beautiful.useless_gap = 5 -- custom
 autorun = true -- custom
 autorunApps =
 {
-   "autorun.lua",
+   "autorun.py",
 }
 if autorun then
    for app = 1, #autorunApps do
