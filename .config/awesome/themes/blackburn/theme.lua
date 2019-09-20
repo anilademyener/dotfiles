@@ -38,17 +38,11 @@ theme.menu_submenu_icon                         = theme.dir .. "/icons/submenu.p
 theme.awesome_icon                              = theme.dir .."/icons/awesome.png"
 theme.taglist_squares_sel                       = theme.dir .. "/icons/square_sel.png"
 theme.taglist_squares_unsel                     = theme.dir .. "/icons/square_unsel.png"
-
--- theme.layout_tile                               = theme.dir .. "/icons/tile.png"
--- theme.layout_tileleft                           = theme.dir .. "/icons/tileleft.png"
--- theme.layout_tilebottom                         = theme.dir .. "/icons/tilebottom.png"
--- theme.layout_tiletop                            = theme.dir .. "/icons/tiletop.png"
-
-theme.layout_tile                               = theme.dir .. "/icons/awesome.png"
-theme.layout_tileleft                           = theme.dir .. "/icons/awesome.png"
-theme.layout_tilebottom                         = theme.dir .. "/icons/awesome.png"
-theme.layout_tiletop                            = theme.dir .. "/icons/awesome.png"
-
+--[[
+theme.layout_tile                               = theme.dir .. "/icons/tile.png"
+theme.layout_tileleft                           = theme.dir .. "/icons/tileleft.png"
+theme.layout_tilebottom                         = theme.dir .. "/icons/tilebottom.png"
+theme.layout_tiletop                            = theme.dir .. "/icons/tiletop.png"
 theme.layout_fairv                              = theme.dir .. "/icons/fairv.png"
 theme.layout_fairh                              = theme.dir .. "/icons/fairh.png"
 theme.layout_spiral                             = theme.dir .. "/icons/spiral.png"
@@ -56,7 +50,22 @@ theme.layout_dwindle                            = theme.dir .. "/icons/dwindle.p
 theme.layout_max                                = theme.dir .. "/icons/max.png"
 theme.layout_fullscreen                         = theme.dir .. "/icons/fullscreen.png"
 theme.layout_magnifier                          = theme.dir .. "/icons/magnifier.png"
-theme.layout_floating                           = theme.dir .. "/icons/floating.png"
+theme.layout_floating                           = theme.dir .. "/icons/floating.png" --]]
+
+theme.layout_tile                               = theme.dir .. "/icons/awesome.png"
+theme.layout_tileleft                           = theme.dir .. "/icons/awesome.png"
+theme.layout_tilebottom                         = theme.dir .. "/icons/awesome.png"
+theme.layout_tiletop                            = theme.dir .. "/icons/awesome.png"
+theme.layout_fairv                              = theme.dir .. "/icons/awesome.png"
+theme.layout_fairh                              = theme.dir .. "/icons/awesome.png"
+theme.layout_spiral                             = theme.dir .. "/icons/awesome.png"
+theme.layout_dwindle                            = theme.dir .. "/icons/awesome.png"
+theme.layout_max                                = theme.dir .. "/icons/awesome.png"
+theme.layout_fullscreen                         = theme.dir .. "/icons/awesome.png"
+theme.layout_magnifier                          = theme.dir .. "/icons/awesome.png"
+theme.layout_floating                           = theme.dir .. "/icons/awesome.png"
+
+
 theme.tasklist_plain_task_name                  = true
 theme.tasklist_disable_icon                     = true
 theme.useless_gap                               = 0
@@ -269,7 +278,7 @@ function theme.at_screen_connect(s)
             layout = wibox.layout.fixed.horizontal,
             wibox.widget.systray(),
             first,
-            theme.mpd.widget,
+            -- theme.mpd.widget,
             --theme.mail.widget,
             theme.weather.icon,
             theme.weather.widget,

@@ -107,10 +107,10 @@ awful.layout.layouts = {
     awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
-    -- awful.layout.suit.fair,
-    -- awful.layout.suit.fair.horizontal,
-    -- awful.layout.suit.spiral,
-    -- awful.layout.suit.spiral.dwindle,
+    awful.layout.suit.fair,
+    awful.layout.suit.fair.horizontal,
+    awful.layout.suit.spiral,
+    awful.layout.suit.spiral.dwindle,
     --awful.layout.suit.max,
     --awful.layout.suit.max.fullscreen,
     --awful.layout.suit.magnifier,
@@ -122,7 +122,7 @@ awful.layout.layouts = {
     --lain.layout.cascade.tile,
     -- lain.layout.centerwork,
     --lain.layout.centerwork.horizontal,
-    -- lain.layout.termfair,
+    --lain.layout.termfair,
     -- lain.layout.termfair.center,
 }
 
@@ -338,10 +338,17 @@ globalkeys = my_table.join(
               {description = "show main menu", group = "awesome"}),
 
     -- Layout manipulation
-    awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,
+    --awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end, -- custom
+    --          {description = "swap with next client by index", group = "client"}),
+    --awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end, -- custom
+    --          {description = "swap with previous client by index", group = "client"}),
+    
+          
+    awful.key({ modkey, "Shift"   }, "Left", function () awful.client.swap.byidx(  1)    end,
               {description = "swap with next client by index", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end,
+    awful.key({ modkey, "Shift"   }, "Right", function () awful.client.swap.byidx( -1)    end,
               {description = "swap with previous client by index", group = "client"}),
+          
     awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end,
               {description = "focus the next screen", group = "screen"}),
     awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end,
@@ -379,10 +386,10 @@ globalkeys = my_table.join(
               {description = "add new tag", group = "tag"}),
     awful.key({ modkey, "Shift" }, "r", function () lain.util.rename_tag() end,
               {description = "rename tag", group = "tag"}),
-    awful.key({ modkey, "Shift" }, "Left", function () lain.util.move_tag(-1) end,
-              {description = "move tag to the left", group = "tag"}),
-    awful.key({ modkey, "Shift" }, "Right", function () lain.util.move_tag(1) end,
-              {description = "move tag to the right", group = "tag"}),
+    --awful.key({ modkey, "Shift" }, "Left", function () lain.util.move_tag(-1) end, -- custom
+    --          {description = "move tag to the left", group = "tag"}),
+    --awful.key({ modkey, "Shift" }, "Right", function () lain.util.move_tag(1) end, -- custom
+    --          {description = "move tag to the right", group = "tag"}),
     awful.key({ modkey, "Shift" }, "d", function () lain.util.delete_tag() end,
               {description = "delete tag", group = "tag"}),
 
