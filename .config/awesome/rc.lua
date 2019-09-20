@@ -97,10 +97,10 @@ local guieditor    = "vi"
 local scrlocker    = "slock"
 
 -- tags
-awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[3])
+awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }, s, awful.layout.layouts[3])
 
 awful.util.terminal = terminal
-awful.util.tagnames = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }
+awful.util.tagnames = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }
 awful.layout.layouts = {
     --awful.layout.suit.floating,
     awful.layout.suit.tile,
@@ -618,12 +618,12 @@ clientkeys = my_table.join(
 -- This should map on the top row of your keyboard, usually 1 to 9.
 
 -- Numpad: [0-9] = [#90, #87-#89, #83-#85, #79-#81] -- custom
-local np_map = { 87, 88, 89, 83, 84, 85, 79, 80, 81 } -- custom
+local np_map = { 87, 88, 89, 83, 84, 85, 79, 80, 81, 90 } -- custom
 
-for i = 1, 9 do
+for i = 1, 10 do
     -- Hack to only show tags 1 and 9 in the shortcut window (mod+s)
     local descr_view, descr_toggle, descr_move, descr_toggle_focus
-    if i == 1 or i == 9 then
+    if i == 1 or i == 10 then
         descr_view = {description = "view tag #", group = "tag"}
         descr_toggle = {description = "toggle tag #", group = "tag"}
         descr_move = {description = "move focused client to tag #", group = "tag"}
@@ -798,7 +798,7 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
-beautiful.useless_gap = 5 -- custom
+beautiful.useless_gap = 10 -- custom
 
 autorun = true -- custom
 autorunApps =
