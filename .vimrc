@@ -22,3 +22,4 @@ set shiftwidth=2
 
 :map <C-n> :NERDTree
 :map <C-x> :NERDTreeClose
+:set term=xterm-256color
