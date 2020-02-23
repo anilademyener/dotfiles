@@ -1,0 +1,10 @@
+for taking backups:
+===
+dconf dump /org/gnome/desktop/wm/keybindings/ > wm-keybindings.dconf.bak
+dconf dump /org/gnome/settings-daemon/plugins/media-keys/ > media-keys-keybindings.dconf.bak
+
+
+for restoring backups:
+===
+dconf load /org/gnome/desktop/wm/keybindings/ < wm-keybindings.dconf.bak
+dconf load /org/gnome/settings-daemon/plugins/media-keys/ < media-keys-keybindings.dconf.bak
