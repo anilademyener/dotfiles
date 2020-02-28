@@ -1,4 +1,3 @@
-
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
@@ -8,6 +7,10 @@
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
+(delete-selection-mode 1)
+
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+(show-paren-mode 1)
 
 (setq inhibit-startup-screen t)
 
@@ -22,10 +25,9 @@
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-;(add-to-list 'default-frame-alist '(foreground-color . "#E0DFDB"))
-;(add-to-list 'default-frame-alist '(foreground-color . "#000000"))
-;(add-to-list 'default-frame-alist '(background-color . "#ffffff"))
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/") 
+;(add-to-list 'default-frame-alist '(foreground-color . "#ffffff"))
+;(add-to-list 'default-frame-alist '(background-color . "#262626"))
+;(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/") 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
