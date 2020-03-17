@@ -1,8 +1,8 @@
 " geohotz's configs
 syntax on
-set tabstop=2
-set shiftwidth=2
-set expandtab
+"set tabstop=2
+"set shiftwidth=2
+"set expandtab
 set ai
 set number
 set hlsearch
@@ -12,13 +12,23 @@ highlight Comment ctermfg=green
 
 " anilademyener's configs
 "call plug#begin('~/.vim/plugged')
-"  Plug 'scrooloose/nerdtree'
-"  Plug 'itchyny/lightline.vim'
+  "Plug 'scrooloose/nerdtree'
+  "Plug 'itchyny/lightline.vim'
 "call plug#end()
 
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+  Plugin 'jiangmiao/auto-pairs'
+  Plugin 'preservim/nerdtree'
+  Plugin 'scrooloose/syntastic'
+  Plugin 'easymotion/vim-easymotion'
+  Plugin 'terryma/vim-multiple-cursors'
+  Plugin 'benmills/vimux'
+  Plugin 'thinca/vim-quickrun'
+call vundle#end()
+
 syntax on
-set tabstop=2
-set shiftwidth=2
+set tabstop=8 softtabstop=2 noexpandtab shiftwidth=2
 
 :map <C-n> :NERDTree
 :map <C-x> :NERDTreeClose
