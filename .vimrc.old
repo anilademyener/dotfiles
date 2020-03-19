@@ -18,18 +18,30 @@ highlight Comment ctermfg=green
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-  Plugin 'jiangmiao/auto-pairs'
+  "Plugin 'jiangmiao/auto-pairs'
   Plugin 'preservim/nerdtree'
   Plugin 'scrooloose/syntastic'
-  Plugin 'easymotion/vim-easymotion'
+  "Plugin 'easymotion/vim-easymotion'
   Plugin 'terryma/vim-multiple-cursors'
-  Plugin 'benmills/vimux'
-  Plugin 'thinca/vim-quickrun'
+  "Plugin 'benmills/vimux'
+  "Plugin 'thinca/vim-quickrun'
+  Plugin 'majutsushi/tagbar'
+  Plugin 'arcticicestudio/nord-vim'
+  "Plugin 'dracula/vim',{'name':'dracula'}
+  "Plugin 'altercation/vim-colors-solarized'
+  "Plugin 'chriskempson/base16-vim'
+  Plugin 'joshdick/onedark.vim'
+  "Plugin 'sjl/badwolf'
 call vundle#end()
 
 syntax on
 set tabstop=8 softtabstop=2 noexpandtab shiftwidth=2
 
-:map <C-n> :NERDTree
+:map <C-t> :TagbarToggle
+:map <C-m> :NERDTree
 :map <C-x> :NERDTreeClose
 :set term=xterm-256color
+":colorscheme torte
+:colorscheme nord
+":colorscheme dracula
+":colorscheme badwolf
