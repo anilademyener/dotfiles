@@ -78,7 +78,7 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -99,9 +99,9 @@ static const char col_cyan[]        = "#005577";
 static char dmenumon[2] 		= "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] 		= { "dmenu_run", "-m", dmenumon, "-fn", "PragmataPro:size=8", "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 //static const char *dmenucmd[] 		= { "/home/aniladem/build/dmenu/dmenu", "-i", "-p", ".:Search", "-fn", "PragmataPro:size=8", "-w", "320", "-h", "20", "-x", "70", "-y", "750", "-dim", "0.4", NULL };
-static const char *termcmd[] 		= { "st", NULL, };
-static const char *rubycmd[] 		= { "st", "-name", "Ruby", "-geometry", "122x55", "-e", "irb", NULL, };
-static const char *lfmcmd[] 		= { "st", "-name", "Total Commander", "-geometry", "95x45", "-e", "lfm", NULL, };
+static const char *termcmd[] 		= { "/usr/local/bin/LukeSmityxyz3-st/st", NULL, };
+static const char *rubycmd[] 		= { "/usr/local/bin/LukeSmityxyz3-st/st", "-name", "Ruby", "-geometry", "122x55", "-e", "irb", NULL, };
+static const char *lfmcmd[] 		= { "/usr/local/bin/LukeSmityxyz3-st/st", "-name", "Total Commander", "-geometry", "95x45", "-e", "lfm", NULL, };
 static const char *vol_up[] 	        = { "pulseaudio-ctl", "up", NULL };
 static const char *vol_down[] 		= { "pulseaudio-ctl", "down", NULL };
 static const char *vol_toggle[]  	= { "pulseaudio-ctl", "mute", NULL };
@@ -142,14 +142,14 @@ static Key keys[] = {
 	{ MODKEY,			XK_period,		focusmon,		{.i = +1 } },
 	{ MODKEY|ShiftMask,		XK_comma,		tagmon,			{.i = -1 } },
 	{ MODKEY|ShiftMask,		XK_period,		tagmon,			{.i = +1 } },
-	{ Mod4Mask,			XK_Up,			moveresize,		{.v = "0x -25y 0w 0h"} },
-	{ Mod4Mask,			XK_Down,		moveresize,		{.v = "0x 25y 0w 0h"} },
-	{ Mod4Mask,			XK_Left,		moveresize,		{.v = "-25x 0y 0w 0h"} },
-	{ Mod4Mask,			XK_Right,		moveresize,		{.v = "25x 0y 0w 0h"} },
-	{ Mod4Mask|ShiftMask,		XK_Up,			moveresize,		{.v = "0x 0y 0w -25h"} },
-	{ Mod4Mask|ShiftMask,		XK_Down,		moveresize,		{.v = "0x 0y 0w 25h"} },
-	{ Mod4Mask|ShiftMask,		XK_Left,		moveresize,		{.v = "0x 0y -25w 0h"} },
-	{ Mod4Mask|ShiftMask,		XK_Right,		moveresize,		{.v = "0x 0y 25w 0h"} },
+	{ Mod1Mask,			XK_Up,			moveresize,		{.v = "0x -25y 0w 0h"} },
+	{ Mod1Mask,			XK_Down,		moveresize,		{.v = "0x 25y 0w 0h"} },
+	{ Mod1Mask,			XK_Left,		moveresize,		{.v = "-25x 0y 0w 0h"} },
+	{ Mod1Mask,			XK_Right,		moveresize,		{.v = "25x 0y 0w 0h"} },
+	{ Mod1Mask|ShiftMask,		XK_Up,			moveresize,		{.v = "0x 0y 0w -25h"} },
+	{ Mod1Mask|ShiftMask,		XK_Down,		moveresize,		{.v = "0x 0y 0w 25h"} },
+	{ Mod1Mask|ShiftMask,		XK_Left,		moveresize,		{.v = "0x 0y -25w 0h"} },
+	{ Mod1Mask|ShiftMask,		XK_Right,		moveresize,		{.v = "0x 0y 25w 0h"} },
 	TAGKEYS(			XK_1,						0)
 	TAGKEYS(			XK_2,						1)
 	TAGKEYS(			XK_3,						2)
