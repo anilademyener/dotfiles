@@ -19,19 +19,20 @@ highlight Comment ctermfg=green
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
   "Plugin 'jiangmiao/auto-pairs'
-  Plugin 'preservim/nerdtree'
-  Plugin 'scrooloose/syntastic'
+Plugin 'preservim/nerdtree'
+  "Plugin 'scrooloose/syntastic'
   "Plugin 'easymotion/vim-easymotion'
-  Plugin 'terryma/vim-multiple-cursors'
+Plugin 'terryma/vim-multiple-cursors'
   "Plugin 'benmills/vimux'
   "Plugin 'thinca/vim-quickrun'
-  Plugin 'majutsushi/tagbar'
-  Plugin 'arcticicestudio/nord-vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'arcticicestudio/nord-vim'
   "Plugin 'dracula/vim',{'name':'dracula'}
   "Plugin 'altercation/vim-colors-solarized'
   "Plugin 'chriskempson/base16-vim'
-  Plugin 'joshdick/onedark.vim'
+Plugin 'joshdick/onedark.vim'
   "Plugin 'sjl/badwolf'
+Plugin 'itchyny/lightline.vim'
 call vundle#end()
 
 syntax on
@@ -41,7 +42,20 @@ set tabstop=8 softtabstop=2 noexpandtab shiftwidth=2
 :map <C-m> :NERDTree
 :map <C-x> :NERDTreeClose
 :set term=xterm-256color
+:set laststatus=2 
+let g:lightline = {
+  \ 'colorscheme': 'one',
+  \ }
 ":colorscheme torte
-:colorscheme nord
+":colorscheme nord
+:colorscheme onedark
 ":colorscheme dracula
 ":colorscheme badwolf
+ noremap  <Up> ""
+ noremap! <Up> <Esc>
+ noremap  <Down> ""
+ noremap! <Down> <Esc>
+ noremap  <Left> ""
+ noremap! <Left> <Esc>
+ noremap  <Right> ""
+ noremap! <Right> <Esc>
