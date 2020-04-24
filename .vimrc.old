@@ -1,8 +1,4 @@
-" geohotz's configs
 syntax on
-"set tabstop=2
-"set shiftwidth=2
-"set expandtab
 set ai
 set number
 set hlsearch
@@ -10,30 +6,12 @@ set ruler
 set paste
 highlight Comment ctermfg=green
 
-" anilademyener's configs
-"call plug#begin('~/.vim/plugged')
-  "Plug 'scrooloose/nerdtree'
-  "Plug 'itchyny/lightline.vim'
-"call plug#end()
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-  "Plugin 'jiangmiao/auto-pairs'
-Plugin 'preservim/nerdtree'
-  "Plugin 'scrooloose/syntastic'
-  "Plugin 'easymotion/vim-easymotion'
-Plugin 'terryma/vim-multiple-cursors'
-  "Plugin 'benmills/vimux'
-  "Plugin 'thinca/vim-quickrun'
-Plugin 'majutsushi/tagbar'
-Plugin 'arcticicestudio/nord-vim'
-  "Plugin 'dracula/vim',{'name':'dracula'}
-  "Plugin 'altercation/vim-colors-solarized'
-  "Plugin 'chriskempson/base16-vim'
-Plugin 'joshdick/onedark.vim'
-  "Plugin 'sjl/badwolf'
-Plugin 'itchyny/lightline.vim'
-call vundle#end()
+set t_Co=256
+set t_AB=m
+set t_AF=m
+if &term =~ '256color'
+    set t_ut=
+endif
 
 syntax on
 set tabstop=8 softtabstop=2 noexpandtab shiftwidth=2
@@ -43,14 +21,7 @@ set tabstop=8 softtabstop=2 noexpandtab shiftwidth=2
 :map <C-x> :NERDTreeClose
 :set term=xterm-256color
 :set laststatus=2 
-let g:lightline = {
-  \ 'colorscheme': 'one',
-  \ }
-":colorscheme torte
-":colorscheme nord
-:colorscheme onedark
-":colorscheme dracula
-":colorscheme badwolf
+:colorscheme koehler 
  noremap  <Up> ""
  noremap! <Up> <Esc>
  noremap  <Down> ""
