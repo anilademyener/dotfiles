@@ -1,0 +1,12 @@
+{
+	"color_scheme": "Packages/Theme - One Dark/One Dark.tmTheme",
+	"font_size": 12,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"tab_size": 2,
+	"theme": "One Dark.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"word_wrap": false
+}
