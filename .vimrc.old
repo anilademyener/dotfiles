@@ -4,7 +4,16 @@ set number
 set hlsearch
 set ruler
 set paste
-highlight Comment ctermfg=green
+
+call plug#begin('~/.vim/plugged')
+Plug 'preservim/nerdtree'
+Plug 'majutsushi/tagbar'
+Plug 'tomasr/molokai'
+Plug 'joshdick/onedark.vim'
+Plug 'morhetz/gruvbox'
+Plug 'terryma/vim-multiple-cursors'
+call plug#end()
+
 
 set t_Co=256
 set t_AB=m
@@ -16,12 +25,15 @@ endif
 syntax on
 set tabstop=8 softtabstop=2 noexpandtab shiftwidth=2
 
+":set nohlsearch
 :map <C-t> :TagbarToggle
 :map <C-m> :NERDTree
 :map <C-x> :NERDTreeClose
 :set term=xterm-256color
 :set laststatus=2 
-:colorscheme koehler 
+:colo gruvbox 
+:set bg=dark
+highlight Comment ctermfg=green
  noremap  <Up> ""
  noremap! <Up> <Esc>
  noremap  <Down> ""
