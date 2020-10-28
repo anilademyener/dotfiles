@@ -9,10 +9,12 @@ source $HOME/.config/nvim/bindings.vim
 " Colors
 syntax on   " Enable syntax highlighting
 set termguicolors
+let g:dracula_colorterm = 0
+"colorscheme dracula
+colo xcodedark 
 
 set hidden
 set showtabline=2
-set laststatus=0
 
 " Python paths, for some stuff
 let g:python3_host_prog='/usr/bin/python'

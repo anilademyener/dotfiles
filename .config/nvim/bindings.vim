@@ -14,6 +14,7 @@ map <ESC>[1;5B <C-Down>
 
 map <C-c> :NERDTreeTabsToggle<CR>
 nmap <F8> :Vista!!<CR>
+nmap <F7> :CocList --number-select diagnostics<CR>
 
 map <C-g> :Goyo<CR>
 
@@ -36,6 +37,13 @@ nnoremap <silent> <M-k> :resize +2<CR>
 nnoremap <silent> <M-h> :vertical resize -2<CR>
 nnoremap <silent> <M-l> :vertical resize +2<CR>
 
+imap <C-k> <Plug>(coc-snippets-expand-jump)
+vmap <C-j> <Plug>(coc-snippets-select)
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 let g:floaterm_keymap_toggle = '<F2>'
 let g:floaterm_keymap_next   = '<F3>'
@@ -55,4 +63,3 @@ nmap fC :Commits<cr>
 tnoremap <Esc> <C-\><C-n>
 
 autocmd FileType fzf tnoremap <buffer> <Esc> <Esc>
-
